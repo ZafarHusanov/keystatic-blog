@@ -1,5 +1,11 @@
 ---
-import { Keystatic } from "@keystatic/astro";
+import Keystatic from "@keystatic/astro";
 ---
 
-<Keystatic />
+<html>
+  <body>
+    <h1>Admin Panel</h1>
+    <!-- React component faqat browserda yuklanadi -->
+    <Keystatic client:load />
+  </body>
+</html>

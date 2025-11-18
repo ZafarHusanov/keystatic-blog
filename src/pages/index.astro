@@ -1,16 +1,14 @@
 ---
 import { getEntry } from "astro:content";
-import { load } from "vite-plugin-keystatic/load";
 
-const ks = await load();
-const home = await ks.singletons.homepage.read();
+const home = await getEntry("homepage", "index");
 ---
 
 <html>
   <body>
-    <h1>{home.title}</h1>
-    <p>{home.subtitle}</p>
+    <h1>{home.data.title}</h1>
+    <p>{home.data.subtitle}</p>
 
-    {home.hero && <img src={home.hero} width="400" />}
+    {home.data.hero && <img src={home.data.hero} width="400" />}
   </body>
 </html>

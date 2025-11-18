@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -13,18 +13,10 @@ const { post } = Astro.props;
 ---
 
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{post.data.title}</title>
-  </head>
   <body>
     <h1>{post.data.title}</h1>
 
-    {post.data.cover && (
-      <img src={post.data.cover} alt={post.data.title} width="250" />
-    )}
-
-    <p>{new Date(post.data.date).toLocaleDateString()}</p>
+    {post.data.cover && <img src={post.data.cover} width="250" />}
 
     <article>
       <Fragment set:html={post.body} />

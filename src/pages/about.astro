@@ -1,0 +1,15 @@
+---
+import { getEntry } from "astro:content";
+
+const about = await getEntry("about", "index");
+---
+
+<html>
+  <body>
+    <h1>{about.data.title}</h1>
+
+    {about.data.photo && <img src={about.data.photo} width="250" />}
+
+    <div set:html={about.data.body} />
+  </body>
+</html>
