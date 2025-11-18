@@ -6,4 +6,5 @@ import keystatic from '@keystatic/astro';
 export default defineConfig({
   integrations: [react(), markdoc(), keystatic()],
   output: 'static',
+  adapter: vercel(),
 });
