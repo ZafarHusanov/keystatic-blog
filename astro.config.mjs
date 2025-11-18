@@ -6,6 +6,6 @@ import vercel from '@astrojs/vercel';
 
 export default defineConfig({
   integrations: [react(), markdoc(), keystatic()],
-  output: 'server',        // server output → Node.js modul ishlaydi
-  adapter: vercel(),       // Vercel serverless
+  output: 'server',        // Server output kerak
+  adapter: vercel(),
 });
